@@ -41,7 +41,7 @@ body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:#1a0f12;c
 /* ===== BUTTON ===== */
 .btn{width:100%;padding:14px;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
 .btn:active{transform:scale(.97)}
-.btn-primary{background:linear-gradient(135deg,#ff7675,#feca57);color:#fff;box-shadow:0 4px 20px rgba(254,202,87,.2)}
+.btn-primary{background:linear-gradient(135deg,#ff7675,#ff7675);color:#fff;box-shadow:0 4px 20px rgba(254,202,87,.2)}
 .btn-primary:hover{box-shadow:0 6px 28px rgba(244,162,97,.3)}
 .btn-second{background:rgba(255,255,255,.03);color:rgba(240,236,228,.4);border:1px solid rgba(255,255,255,.06)}
 .btn-danger{background:linear-gradient(135deg,#e94560,#c23152);color:#fff}
@@ -74,7 +74,7 @@ body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:#1a0f12;c
 .opt:hover{border-color:rgba(254,202,87,.2);background:rgba(254,202,87,.04)}
 .opt:active{transform:scale(.97)}
 .opt .il{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:8px;font-size:10px;font-weight:700;margin-right:10px;color:#fff}
-.opt .s1{background:#ff7675}.opt .s2{background:#feca57}.opt .s3{background:#d4af37}.opt .s4{background:#8ecae6}
+.opt .s1{background:#ff7675}.opt .s2{background:#ff7675}.opt .s3{background:#d4af37}.opt .s4{background:#8ecae6}
 
 .opt.wrong{animation:shake .5s;border-color:#e94560;background:rgba(233,69,96,.08)!important}
 .opt.right{border-color:#4caf50;background:rgba(76,175,80,.08)!important}
@@ -130,7 +130,7 @@ const DATA={
   color:'#ff7675'
 };
 
-const STAGES=[{scene:'TA盯着屏幕很久才回了消息但只有三个字',line:'嗯好的。',safe:1,dmg:1,death:'你追问TA导致TA彻底消失'},{scene:'消息越来越短以前TA会讲很多细节现在只剩几个字',line:'嗯知道了。',safe:2,dmg:2,death:'你逼TA表态TA选择了离开'},{scene:'TA没有指责你只是说自己最近很累',line:'我最近很累。',safe:3,dmg:2,death:'你说我比你更累TA说算了吧'},{scene:'你刷到TA发了动态但TA没有回你消息',line:'没什么好说的。',safe:4,dmg:3,death:'你公开指责TA让TA难堪'},{scene:'TA开始对你用敬语客气周到无懈可击',line:'谢谢你真的。',safe:1,dmg:3,death:'你说你至于吗TA说至于'},{scene:'经典死亡区很多人以为这句话还有机会',line:'你是个很好的人。',safe:2,dmg:4,death:'你说那我算什么TA沉默了'},{scene:'没有崩溃没有拉扯只是安静地把门关上了',line:'我们到这里吧。',safe:3,dmg:4,death:'你疯狂联系TA被拉黑了'},{scene:'你把想说的话打了又删最后只说了一句体面的话',line:'你值得更好的。',safe:4,dmg:5,death:'你说那就算了TA说好的'},{scene:'TA的态度变得坚定不再留任何商量余地',line:'别再联系我了。',safe:1,dmg:5,death:'你说是你不对但已经晚了'},{scene:'你从别人口中听说TA过得很好那根线啪地断了',line:'我已经放下了。',safe:2,dmg:5,death:'你去TA家楼下等TA报了警'},{scene:'共同朋友告诉你TA说过不想再提到你',line:'别打听我生活了。',safe:3,dmg:5,death:'你让朋友传话TA说朋友都没得做'},{scene:'最后一扇没有上锁的门这是你最后的机会',line:'还记得第一次见面吗？',safe:4,dmg:5,death:'你说那我也忘了TA说太好了'}];
+const STAGES=[{scene:'TA以前发朋友圈全是和你有关的最近你的痕迹在TA的动态里一点一点消失了',line:'回应变淡',safe:1,dmg:1,death:'你问TA为什么最近不发了TA说没什么好发的了你发现你的存在变成了没什么好发的'},{scene:'你发现TA跟别人在一起的时候笑得更开心了',line:'不再主动',safe:2,dmg:2,death:'你说你对他笑得更开心了TA说因为没压力啊——你意识到自己也成了TA的压力源'},{scene:'你试图严肃地谈一次感情问题TA扭来扭去说不要这么沉重嘛',line:'开始敷衍',safe:3,dmg:2,death:'你一定要严肃TA说那你严肃吧我不想被影响心情然后出门了门关上的声音很轻你心很重'},{scene:'TA开始频繁约朋友出去玩每一个局都带着笑容但回到家就安静得像另一个人',line:'拒绝交流',safe:4,dmg:3,death:'TA在每个局都笑得很开心回来后安静得像另一个人那个人你从来不了解'},{scene:'你问TA你是不是不爱我了TA说你别这么敏感好不好然后继续化妆出门',line:'回避规划',safe:1,dmg:3,death:'你说我敏感TA说是啊你现在这个样子确实让人很不放松'},{scene:'TA在你面前表演开心表演得很用力你都不忍心拆穿',line:'情感降温',safe:2,dmg:4,death:'你看TA在表演开心你不敢叫停因为你怕TA连表演都不愿意了'},{scene:'你发现TA的手机相册里最近全是聚会合照没有一张是和你两个人单独拍的',line:'社交剥离',safe:3,dmg:4,death:'你说怎么没有我们的合照TA说因为最近没拍你想起上次合影已经是一个月前了'},{scene:'你试图限制TA的行踪TA说你好烦我的生活不是只有你',line:'失去耐心',safe:4,dmg:5,death:'你限制了TA一次TA回了你一句然后那天TA再也没回过你消息'},{scene:'TA说我觉得自己被困住了需要新鲜空气你问那我呢TA说你也可以来啊——语气像在邀请一个普通朋友',line:'冷漠循环',safe:1,dmg:5,death:'TA说需要新鲜空气你觉得TA想呼吸的是没有你的那种空气'},{scene:'你看到TA在派对上的样子那是最初吸引你的样子但你现在觉得那个样子离你好远',line:'划清界限',safe:2,dmg:5,death:'你在派对上看着TA发光你发现原来TA的光不需要你也能亮'},{scene:'TA开始说一些无所谓之类的话语气轻松到让你觉得TA对什么都不在乎了连你也是',line:'清理痕迹',safe:3,dmg:5,death:'TA说了声好你问什么好TA说都好看你的好关你什么事'},{scene:'你最后一次看到TA在人群里发光你站在人群外看着你意识到你已经是观众了',line:'最终告别',safe:4,dmg:5,death:'你站在人群外看着TA成为焦点你终于知道观众和主角的区别了——TA是主角而你只是路过的人'}];
 
 let hp=10,maxHp=10,cur=0,sc=0,over=false;
 const A=document.getElementById('app');

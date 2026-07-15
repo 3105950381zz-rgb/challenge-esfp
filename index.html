@@ -121,27 +121,7 @@ const DATA={
   winDesc:'你重新变成了那个让ESFP觉得好玩、有趣、愿意分享的人。你不再扫兴、不再浇冷水——你开始跟TA一起闹一起笑。快乐回来了，TA也回来了。'
 };
 
-const OPTIONS=[
-  '带TA去好玩的地方嗨',
-  '热情回应TA的分享',
-  '扫兴说这个有什么好玩的',
-  '陪TA一起疯一起闹'
-];
-
-const STAGES=[
-  {scene:'TA穿好看化全妆发朋友圈不私发你了',line:'哈哈。',safe:2,death:'你点赞但不是第一人了'},
-  {scene:'TA刷到好笑的第一个不是发你了',line:'这个好好笑！',safe:4,death:'你看到已晚了几轮问TATA说忘了'},
-  {scene:'你不想出门TA说好吧没有失望只有习惯',line:'好吧那我自己去。',safe:1,death:'你不去TA自己去发现TA也很快乐'},
-  {scene:'你发现TA在朋友面前笑得比在你面前大声',line:'你好好玩～',safe:2,death:'那声音很久没对你笑过了'},
-  {scene:'TA提议去做疯狂的事你说太冒险',line:'那算了吧。',safe:1,death:'太冒险杀死TA分享欲'},
-  {scene:'TA在你面前开始看手机了以前从不',line:'我在回消息。',safe:4,death:'躲开的动作告诉你有距离了'},
-  {scene:'TA说想一个人旅行你愣住TA说是开玩笑',line:'开玩笑的啦！',safe:2,death:'你信了是玩笑但从不开玩笑'},
-  {scene:'TA换发型三天你才发现TA说算了',line:'你才发现啊。',safe:2,death:'三天才发现在乎慢了三天'},
-  {scene:'TA跟新朋友分享以前只对你说的故事',line:'对呀上次跟TA们。',safe:4,death:'你变成听众不是主角'},
-  {scene:'你看到TA跟人聊得眼神发光你走近刚好散',line:'怎么啦？',safe:1,death:'你走近时刚好散了像你们'},
-  {scene:'TA说好无聊你以为说活动其实说每天',line:'是有点无聊。',safe:1,death:'每天包括今天包括明天'},
-  {scene:'TA最后一次发光眼神看你是告别不是心动',line:'我走了拜拜。',safe:4,death:'你认出来装没认出TA再没给过'}
-];
+const STAGES=[{scene:"TA穿好看化全妆发朋友圈不私发你了",line:"哈哈。",options:["你今晚也太好看了吧私发我","你不私发我我生气了","你给谁看的","你穿这么好看我直接来找你"],safe:2,death:"你点赞但不是第一人了"},{scene:"TA刷到好笑的第一个不是发你了",line:"这个好好笑！",options:["什么好笑的发给我也笑一下","你以前第一个发给我的","你都不跟我分享了","好笑的事要一起笑"],safe:4,death:"你看到已晚了几轮问TATA说忘了"},{scene:"你不想出门TA说好吧没有失望只有习惯",line:"好吧那我自己去。",options:["等等我换衣服陪你","你自己去吧玩开心","你每次都这样自己玩","我不去你也不许去"],safe:1,death:"你不去TA自己去发现TA也很快乐"},{scene:"你发现TA在朋友面前笑得比在你面前大声",line:"你好好玩～",options:["你对我也这样笑一个","你跟我在一起不开心吗","你跟朋友在一起更开心是吧","你笑起来真好看对我多笑笑"],safe:2,death:"那声音很久没对你笑过了"},{scene:"TA提议去做疯狂的事你说太冒险",line:"那算了吧。",options:["走啦陪你疯一次","你每次都这样算了我累了","太危险了我们换一个","你的疯狂里能不能有我"],safe:1,death:"太冒险杀死TA分享欲"},{scene:"TA在你面前开始看手机了以前从不",line:"我在回消息。",options:["你以前跟我在一起不看手机的","你在回谁的消息我看看","你能不能看看我","你回吧我看你回完"],safe:4,death:"躲开的动作告诉你有距离了"},{scene:"TA说想一个人旅行你愣住TA说是开玩笑",line:"开玩笑的啦！",options:["你吓死我了不好笑","你最好是开玩笑的","你一个人去我也要自己去了","你要是认真的我会很难过"],safe:2,death:"你信了是玩笑但从不开玩笑"},{scene:"TA换发型三天你才发现TA说算了",line:"你才发现啊。",options:["对不起我太迟钝了新发型超好看","我早发现了等你说呢","三天怎么了好看的发型永远不晚","你换发型先给我看好不好"],safe:2,death:"三天才发现在乎慢了三天"},{scene:"TA跟新朋友分享以前只对你说的故事",line:"对呀上次跟TA们。",options:["你以前只跟我说的","你跟别人说我有点吃醋","新朋友比我有趣是吧","你的故事我很喜欢听你多说"],safe:4,death:"你变成听众不是主角"},{scene:"你看到TA跟人聊得眼神发光你走近刚好散",line:"怎么啦？",options:["你们聊什么这么开心我不可以听吗","你一看到我就不聊了什么意思","你眼神发光的样子真好看","我吃醋了你要哄我"],safe:1,death:"你走近时刚好散了像你们"},{scene:"TA说好无聊你以为说活动其实说每天",line:"是有点无聊。",options:["那我们今天不无聊了走","跟我在一起也无聊了吗","无聊就找点事做","你是不是觉得我无聊了"],safe:1,death:"每天包括今天包括明天"},{scene:"TA最后一次发光眼神看你是告别不是心动",line:"我走了拜拜。",options:["别走我还有好多事想跟你一起做","拜拜你走吧","你眼神我知道了但我不想放你走","你要去哪里我陪你"],safe:4,death:"你认出来装没认出TA再没给过"}];
 
 let cur=0,over=false;
 const A=document.getElementById('app');
@@ -176,7 +156,7 @@ function lv(){
   if(over)return'';
   if(cur>=STAGES.length)return end();
   const s=STAGES[cur];
-  const optsHtml=OPTIONS.map((o,i)=>`<button class="opt" onclick="pk(${i})"><span class="il s${i+1}">${LABELS[i]}</span>${o}</button>`).join('');
+  const optsHtml=s.options.map((o,i)=>`<button class="opt" onclick="pk(${i})"><span class="il s${i+1}">${LABELS[i]}</span>${o}</button>`).join('');
   return `<div class="card fi">
     <div class="lv-hd">
       <span class="lv-name">⚠️ 第${cur+1}/${STAGES.length}关</span>

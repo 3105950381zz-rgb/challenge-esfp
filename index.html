@@ -127,7 +127,7 @@ const DATA={
   emoji:'🎉',title:'ESFP',subtitle:'活力四射的快乐使者',
   desc:'ESFP 是活在聚光灯下的人。当你浇灭TA的热情、扫TA的兴、让TA觉得跟你在一起不好玩，TA不会怪你——但TA会去别处找快乐。',
   color:'#ff9ff3',qrSrc:'qrcode.jpg',
-  winDesc:'你重新变成了那个让ESFP觉得好玩、有趣、愿意分享的人。你不再扫兴、不再浇冷水——你开始跟TA一起闹一起笑。快乐回来了，TA也回来了。',difficulty:'★★☆☆☆',diffLabel:'玩乐型 · 一起嗨就对了',dist:[100,90,82,72,62,52,40,30,20,12,7,3,1.5]};
+  winDesc:'你重新变成了那个让ESFP觉得好玩、有趣、愿意分享的人。你不再扫兴、不再浇冷水——你开始跟TA一起闹一起笑。快乐回来了，TA也回来了。',difficulty:'★★☆☆☆',diffLabel:'玩乐型 · 一起嗨就对了',dist:[100,98,95,91,86,80,73,64,54,42,30,18,8]};
 
 const STAGES=[{scene:"TA穿好看化全妆发朋友圈不私发你了",line:"哈哈。",options:["你化这么好看就是为了发朋友圈吗","你穿这么好看我要直接来找你了","好看好看 我点赞了","你今天化妆了？跟平时不太一样"],safe:2,death:"你点赞但不是第一人了"},{scene:"TA刷到好笑的第一个不是发你了",line:"这个好好笑！",options:["好笑的事要一起笑才更好笑","你笑点也太低了吧","哈哈哈给我看看 我也要笑一下","什么好笑的 分享一下"],safe:3,death:"你看到已晚了几轮问TATA说忘了"},{scene:"你不想出门TA说好吧没有失望只有习惯",line:"好吧那我自己去。",options:["你自己去吧 我在家等你","你就不能为我去一次吗","你每次都这样 我都习惯了","等等我换件衣服 我跟你去"],safe:4,death:"你不去TA自己去发现TA也很快乐"},{scene:"你发现TA在朋友面前笑得比在你面前大声",line:"你好好玩～",options:["你笑起来真好看 对我多笑笑嘛","你跟朋友在一起比跟我在一起开心多了","你笑太大声了 注意点形象","有什么好笑的 我怎么get不到"],safe:1,death:"那声音很久没对你笑过了"},{scene:"TA提议去做疯狂的事你说太冒险",line:"那算了吧。",options:["太危险了 你还是别去了","我陪你去 但你要答应我注意安全","走啊 疯狂的事当然要两个人一起做","你天天想这些有的没的"],safe:3,death:"太冒险杀死TA分享欲"},{scene:"TA在你面前开始看手机了以前从不",line:"我在回消息。",options:["跟谁聊天呢 手机给我看看","你看完跟我说 我想跟你说话","你能不能别老看手机","哦那你回吧"],safe:2,death:"躲开的动作告诉你有距离了"},{scene:"TA说想一个人旅行你愣住TA说是开玩笑",line:"开玩笑的啦！",options:["吓死我了 你以后别开这种玩笑","我就知道你是开玩笑的","你要是真想去我也不是不能陪你","吓我一跳 不过你想去的话我陪你 去哪都行"],safe:4,death:"你信了是玩笑但从不开玩笑"},{scene:"TA换发型三天你才发现TA说算了",line:"你才发现啊。",options:["对不起我最近太粗心了 新发型超好看 我请你吃饭赔罪","三天前换的？我没注意看","我觉得你之前那个发型更好看","你没告诉我嘛 你告诉我我就知道了"],safe:1,death:"三天才发现在乎慢了三天"},{scene:"TA跟新朋友分享以前只对你说的故事",line:"对呀上次跟TA们。",options:["你怎么把这些事也跟别人说","你有新朋友了就不需要我了是吧","那些故事你都讲烂了还讲","你的故事我还想听的 你继续说 我没听够"],safe:4,death:"你变成听众不是主角"},{scene:"你看到TA跟人聊得眼神发光你走近刚好散",line:"怎么啦？",options:["你们聊什么呢 我一来就不聊了","我看你聊得挺开心的嘛","我吃醋了 你哄我","没事 你继续聊 我在旁边等你"],safe:3,death:"你走近时刚好散了像你们"},{scene:"TA说好无聊你以为说活动其实说每天",line:"是有点无聊。",options:["那我带你去做点有意思的 现在就走","你是不是觉得我也无聊了","无聊就找点事做嘛","每天不都这样吗"],safe:1,death:"每天包括今天包括明天"},{scene:"TA最后一次发光眼神看你是告别不是心动",line:"我走了拜拜。",options:["你别走 我们再好好聊聊","你走了就别回来了","好吧 拜拜","你要去哪 我陪你走最后一段"],safe:4,death:"你认出来装没认出TA再没给过"}];
 
@@ -137,7 +137,7 @@ const LABELS=['A','B','C','D'];
 const SK='mbti_wb';
 function ls(){try{return JSON.parse(localStorage.getItem(SK))||{}}catch(e){return{}}}
 function sv(t,l,w){const a=ls();if(!a[t]||a[t].best<l){a[t]={best:l,won:w,date:Date.now()}}a[t].plays=(a[t].plays||0)+1;localStorage.setItem(SK,JSON.stringify(a))}
-function pct(l){const d=DATA.dist;return Math.round((d[Math.min(l,d.length-1)]||0)*10)/10}
+function pct(l){return Math.round((100-(d[Math.min(Math.max(l-1,0),d.length-1)]||0))*10)/10}
 function statsHTML(level){
   const p=pct(level);
   return '<div class="stats-box">'
